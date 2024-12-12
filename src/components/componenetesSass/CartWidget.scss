@@ -1,0 +1,109 @@
+.cart-widget {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cart-icon {
+    font-size: 1.5rem;
+}
+
+.cart-count {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.carrito-boton {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.carrito-boton .btn {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+}
+
+.carrito-tarjeta {
+    position: relative;
+    top: 10px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.carrito-tarjeta .carrito-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.carrito-tarjeta .carrito-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.producto-en-carrito {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    padding: 15px;
+}
+
+.producto-en-carrito .producto-imagen img {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+}
+
+.producto-en-carrito .producto-detalles {
+    flex-grow: 1;
+}
+
+.producto-en-carrito .producto-botones button {
+    margin: 0 5px;
+    padding: 5px 10px;
+}
+
+.producto-en-carrito h4 {
+    margin: 0;
+}
+
+.producto-en-carrito p {
+    margin: 0;
+}
+
+.carrito-tarjeta button {
+    margin-top: 20px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #f00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.carrito-tarjeta button:hover {
+    background-color: #c00;
+}

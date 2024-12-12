@@ -1,0 +1,256 @@
+.NavBar {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #fffbd8, #ffffff);
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.header-index {
+  background: radial-gradient(circle, rgb(241, 205, 0), rgb(255, 255, 255));
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.header-index img {
+  width: auto;
+  height: 400px;
+  object-fit: contain;
+  align-items: center;
+}
+
+.eslogan {
+  padding: 20px;
+  background: linear-gradient(to bottom, #fffbd8, #ffffff);
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: auto;
+}
+.eslogan h1 {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #000000;
+  font-style: italic;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 275.6px;
+  height: auto;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.producto-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.producto-card {
+  width: 300px;
+  margin: 10px;
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.producto-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.btn {
+  margin-bottom: 20px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 600px;
+  height: 60000px;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.imagen-modal {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.imagen-modal img {
+  width: 500px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.navegacion-imagenes {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.navegacion-imagenes button {
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.navegacion-imagenes button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.close {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.card-title h3 {
+  font-size: 1rem;
+}
+
+.cart-widget {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.cart-icon {
+  font-size: 1.5rem;
+}
+
+.cart-count {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.carrito-boton {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.carrito-boton .btn {
+  font-size: 1.5rem;
+  padding: 15px 30px;
+}
+
+.carrito-tarjeta {
+  position: relative;
+  top: 10px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.carrito-tarjeta .carrito-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.carrito-tarjeta .carrito-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.producto-en-carrito {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  padding: 15px;
+}
+
+.producto-en-carrito .producto-imagen img {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+}
+
+.producto-en-carrito .producto-detalles {
+  flex-grow: 1;
+}
+
+.producto-en-carrito .producto-botones button {
+  margin: 0 5px;
+  padding: 5px 10px;
+}
+
+.producto-en-carrito h4 {
+  margin: 0;
+}
+
+.producto-en-carrito p {
+  margin: 0;
+}
+
+.carrito-tarjeta button {
+  margin-top: 20px;
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #f00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.carrito-tarjeta button:hover {
+  background-color: #c00;
+}
+
+/*# sourceMappingURL=style.css.map */
