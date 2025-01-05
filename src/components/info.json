@@ -5,7 +5,7 @@
         "categoria": "habitaciones",
         "subcategoria": "habitaciones",
         "stock": 10,
-        "precio": "Consultar",
+        "precio": 25,
         "pasajeros": 2,
         "imagenes": [
             "habiacionesSTANDARDLATERAL1.jpg",
@@ -20,7 +20,7 @@
         "categoria": "habitaciones",
         "subcategoria": "habitaciones",
         "stock": 10,
-        "precio": "Consultar",
+        "precio": 30,
         "pasajeros": 4,
         "imagenes": [
             "habitacionSTANDARDFRENTECALLE1.jpg",
@@ -37,7 +37,7 @@
         "categoria": "habitaciones",
         "subcategoria": "habitaciones",
         "stock": 10,
-        "precio": "Consultar",
+        "precio": 35,
         "pasajeros": 6,
         "imagenes": [
             "habitacionSTANDARDFRENTEMAR1.jpg",
@@ -55,7 +55,7 @@
         "categoria": "habitaciones",
         "subcategoria": "habitaciones",
         "stock": 10,
-        "precio": "Consultar",
+        "precio": 40,
         "pasajeros": 7,
         "imagenes": [
             "habitacionSUPERIORFRENTECALLE1.jpg",

@@ -1,152 +1,107 @@
-import React, { useState, useEffect } from "react";
-import CartWidget from "./CartWidget";
-import './style.css';
+import React, { useState, useEffect } from 'react';
+import CartWidget from './CartWidget';
+import ItemListContainer from './ItemListContainer';
+import Search from './Search';  // Importa el componente Search
 
 const NavBar = () => {
-    const [productos, setProductos] = useState([]);
-    const [productosFiltrados, setProductosFiltrados] = useState([]);
-    const [modalAbierto, setModalAbierto] = useState(false);
-    const [productoSeleccionado, setProductoSeleccionado] = useState(null);
-    const [imagenActual, setImagenActual] = useState(0);
-    const [carrito, setCarrito] = useState([]);
-    const [carritoAbierto, setCarritoAbierto] = useState(false);
+    const [category, setCategory] = useState(null);
+    const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+    const [cart, setCart] = useState([]);
+    const [items, setItems] = useState([]);
 
     useEffect(() => {
-        const cargarProductos = async () => {
-            const response = await fetch("./info.json");
-            const data = await response.json();
-            setProductos(data);
-            setProductosFiltrados(data.filter(producto => producto.categoria === "habitaciones"));
-        };
-        cargarProductos();
+        // Cargar los datos de info.json desde la carpeta src
+        fetch('./src/components/info.json')
+            .then(response => response.json())
+            .then(data => {
+                setItems(data);  // Guardar todos los elementos
+            })
+            .catch(error => console.error("Error al cargar los datos:", error));
+
+        const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+        setCart(storedCart);
     }, []);
 
-    const agregarAlCarrito = (producto) => {
-        const productoEnCarrito = carrito.find(item => item.id === producto.id);
-        if (productoEnCarrito) {
-            setCarrito(carrito.map(item =>
-                item.id === producto.id
-                    ? { ...item, cantidad: item.cantidad + 1 }
-                    : item
-            ));
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart]);
+
+    const toggleCategory = (cat) => {
+        if (category === cat) {
+            setIsCategoryOpen(!isCategoryOpen);
         } else {
-            setCarrito([...carrito, { ...producto, cantidad: 1 }]);
+            setCategory(cat);
+            setIsCategoryOpen(true);
         }
     };
 
-    const aumentarCantidad = (id) => {
-        setCarrito(carrito.map(item =>
-            item.id === id
-                ? { ...item, cantidad: item.cantidad + 1 }
-                : item
-        ));
-    };
-
-    const disminuirCantidad = (id) => {
-        setCarrito(carrito.map(item =>
-            item.id === id && item.cantidad > 1
-                ? { ...item, cantidad: item.cantidad - 1 }
-                : item
-        ));
-    };
-
-    const eliminarProducto = (id) => {
-        setCarrito(carrito.filter(item => item.id !== id));
-    };
-
-    const toggleCarrito = () => {
-        setCarritoAbierto(!carritoAbierto);
+    const handleAddToCart = (item) => {
+        setCart((prevCart) => {
+            const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
+            if (existingItem) {
+                return prevCart.map((cartItem) =>
+                    cartItem.id === item.id
+                        ? { ...cartItem, cantidad: cartItem.cantidad + 1 }
+                        : cartItem
+                );
+            } else {
+                return [...prevCart, { ...item, cantidad: 1 }];
+            }
+        });
     };
 
     return (
-        <div className="NavBar">
-            <header>
-                <div className="header-nav">
-                    <div className="logo">
-                        <div className="header-index">
-                            <img src="./imagenes/LOGO.png" alt="Logo lembranças" />
-                        </div>
-                    </div>
+        <div className="nav-container">
+            <div className="header">
+                <div className="header-index">
+                    <img src="./imagenes/logo.png" alt="Logo" />
                 </div>
-            </header>
+                <div className="eslogan">
+                    <h1>Somos una empresa apasionada por crear los mejores recuerdos de cada aventura.</h1>
+                </div>
 
-            <div className="main-nav" id="catalogos">
-                <div className="tarjta-catalogo">
-                    <div className="categoria">
-                        <button className="btn btn-primary" onClick={() => setProductosFiltrados(productos.filter(producto => producto.categoria === "habitaciones"))}>
+                {/* Botones de categorías dentro de una tarjeta */}
+                <div className="categories">
+                    <div className="categoria-tarjeta">
+                        <button onClick={() => toggleCategory('habitaciones')}>
                             Habitaciones
                         </button>
                     </div>
-                    <div className="categoria">
-                        <button className="btn btn-primary" onClick={() => setProductosFiltrados(productos.filter(producto => producto.categoria === "excursiones"))}>
+                    <div className="categoria-tarjeta">
+                        <button onClick={() => toggleCategory('excursiones')}>
                             Excursiones
                         </button>
                     </div>
-                </div>
 
-                <div className="productos">
-                    {productosFiltrados.map((producto) => (
-                        <div key={producto.id} className="card producto-card">
-                            <div className="card-body">
-                                <div className="card-title"><h3>{producto.nombre}</h3></div>
-                                <button onClick={() => agregarAlCarrito(producto)}>
-                                    <img 
-                                        src={`./imagenes/${producto.imagenes[0]}`} 
-                                        alt={producto.nombre} 
-                                        className="img-fluid img-card" 
-                                    />
-                                </button>
-                                <p>Precio: USD${producto.precio}</p>
-                                <p>Capacidad: {producto.pasajeros} personas</p>
-                                <button 
-                                    className="btn btn-success" 
-                                    onClick={() => agregarAlCarrito(producto)}
-                                >
-                                    Agregar al carrito
+                    {/* Catálogo dentro de la misma tarjeta de categorías */}
+                    {isCategoryOpen && category && (
+                        <div className="catalogo-tarjeta">
+                            <div className="catalogo-header">
+                                <h2>{category === 'habitaciones' ? 'Catálogo de Habitaciones' : 'Catálogo de Excursiones'}</h2>
+                            </div>
+                            <div className="catalogo-body">
+                                <ItemListContainer 
+                                    category={category} 
+                                    onAddToCart={handleAddToCart} 
+                                    items={items.filter(item => item.categoria === category)} 
+                                />
+                                {/* Botón Cerrar al final del catálogo */}
+                                <button className="cerrar-button" onClick={() => setIsCategoryOpen(false)}>
+                                    Cerrar
                                 </button>
                             </div>
                         </div>
-                    ))}
+                    )}
                 </div>
 
-                <CartWidget cantidad={carrito.length} toggleCarrito={toggleCarrito} />
-                
-                <div className="carrito-boton">
-                    <button className="btn btn-lg btn-primary" onClick={toggleCarrito}>
-                        Tu carrito
-                    </button>
-                </div>
+                {/* Barra de búsqueda debajo de los catálogos y arriba del carrito */}
+                <Search items={items} onAddToCart={handleAddToCart} /> {/* Invoca el componente Search */}
             </div>
 
-            {carritoAbierto && carrito.length > 0 && (
-                <div className="carrito-tarjeta">
-                    <div className="carrito-header">
-                        <h3>Carrito de Compras</h3>
-                    </div>
-                    <div className="carrito-body">
-                        {carrito.map((producto) => (
-                            <div key={producto.id} className="producto-en-carrito card">
-                                <div className="card-body">
-                                    <div className="producto-imagen">
-                                        <img src={`./imagenes/${producto.imagenes[0]}`} alt={producto.nombre} />
-                                    </div>
-                                    <div className="producto-detalles">
-                                        <h4>{producto.nombre}</h4>
-                                        <p>Precio: USD${producto.precio}</p>
-                                        <p>Cantidad: {producto.cantidad}</p>
-                                        <div className="producto-botones">
-                                            <button onClick={() => aumentarCantidad(producto.id)}>+</button>
-                                            <button onClick={() => disminuirCantidad(producto.id)}>-</button>
-                                            <button onClick={() => eliminarProducto(producto.id)}>Eliminar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <button onClick={toggleCarrito} className="btn btn-primary">Cerrar Carrito</button>
-                </div>
-            )}
+            {/* Carrito */}
+            <div className="carrito-footer">
+                <CartWidget cantidad={cart.length} cart={cart} setCart={setCart} />
+            </div>
         </div>
     );
 };
