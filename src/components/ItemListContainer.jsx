@@ -24,7 +24,7 @@ const ItemListContainer = ({ category, onAddToCart }) => {
                         <ItemDetailContainer item={item} />
                         <p className="precio">USD${item.precio === "Consultar" ? item.precio : `${item.precio}`} por día</p>
                         <p><strong>Pasajeros:</strong> {item.pasajeros}</p>
-                        <button onClick={() => handleAddToCart(item)}>Agregar al Carrito</button>
+                        <button className="agregar-carrito" onClick={() => handleAddToCart(item)}>Agregar al Carrito</button>
                     </div>
                 ))
             ) : (

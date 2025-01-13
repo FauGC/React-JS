@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CartWidget from './CartWidget';
 import ItemListContainer from './ItemListContainer';
-import Search from './Search';  // Importa el componente Search
+import Search from './Search';  
 
 const NavBar = () => {
     const [category, setCategory] = useState(null);
@@ -10,11 +10,10 @@ const NavBar = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        // Cargar los datos de info.json desde la carpeta src
         fetch('./src/components/info.json')
             .then(response => response.json())
             .then(data => {
-                setItems(data);  // Guardar todos los elementos
+                setItems(data);  
             })
             .catch(error => console.error("Error al cargar los datos:", error));
 
@@ -59,25 +58,20 @@ const NavBar = () => {
                 <div className="eslogan">
                     <h1>Somos una empresa apasionada por crear los mejores recuerdos de cada aventura.</h1>
                 </div>
-
-                {/* Botones de categorías dentro de una tarjeta */}
                 <div className="categories">
-                    <div className="categoria-tarjeta">
-                        <button onClick={() => toggleCategory('habitaciones')}>
+                
+                        <button className="categoria-button" onClick={() => toggleCategory('habitaciones')}>
                             Habitaciones
                         </button>
-                    </div>
-                    <div className="categoria-tarjeta">
-                        <button onClick={() => toggleCategory('excursiones')}>
+
+                        <button className="categoria-button" onClick={() => toggleCategory('excursiones')}>
                             Excursiones
                         </button>
-                    </div>
-
-                    {/* Catálogo dentro de la misma tarjeta de categorías */}
+                    
                     {isCategoryOpen && category && (
                         <div className="catalogo-tarjeta">
                             <div className="catalogo-header">
-                                <h2>{category === 'habitaciones' ? 'Catálogo de Habitaciones' : 'Catálogo de Excursiones'}</h2>
+                                <h3>{category === 'habitaciones' ? 'Catálogo de Habitaciones' : 'Catálogo de Excursiones'}</h3>
                             </div>
                             <div className="catalogo-body">
                                 <ItemListContainer 
@@ -85,7 +79,6 @@ const NavBar = () => {
                                     onAddToCart={handleAddToCart} 
                                     items={items.filter(item => item.categoria === category)} 
                                 />
-                                {/* Botón Cerrar al final del catálogo */}
                                 <button className="cerrar-button" onClick={() => setIsCategoryOpen(false)}>
                                     Cerrar
                                 </button>
@@ -94,11 +87,9 @@ const NavBar = () => {
                     )}
                 </div>
 
-                {/* Barra de búsqueda debajo de los catálogos y arriba del carrito */}
-                <Search items={items} onAddToCart={handleAddToCart} /> {/* Invoca el componente Search */}
+                <Search items={items} onAddToCart={handleAddToCart} /> 
             </div>
 
-            {/* Carrito */}
             <div className="carrito-footer">
                 <CartWidget cantidad={cart.length} cart={cart} setCart={setCart} />
             </div>

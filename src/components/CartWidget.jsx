@@ -33,7 +33,7 @@ const CartWidget = ({ cantidad, cart, setCart }) => {
     return (
         <div>
             <div className="cart-widget" onClick={toggleCarrito}>
-                <button>Mi carrito ({cantidad})</button>
+                <button className="boton-micarrito">Mi carrito ({cantidad})</button>
             </div>
 
             {isCarritoVisible && (
@@ -42,10 +42,9 @@ const CartWidget = ({ cantidad, cart, setCart }) => {
                     <div className="carrito-body">
                         {cart.length > 0 ? (
                             cart.map((producto) => {
-                                // Asumiendo que "producto.imagenes" es un array de imágenes
                                 const imageUrl = producto.imagenes && producto.imagenes[0]
                                     ? `./imagenes/${producto.imagenes[0]}`
-                                    : './imagenes/default.jpg';  // Imagen por defecto si no hay imagen
+                                    : './imagenes/default.jpg';
 
                                 return (
                                     <div key={producto.id} className="producto-en-carrito">
@@ -58,9 +57,9 @@ const CartWidget = ({ cantidad, cart, setCart }) => {
                                             <p>Cantidad: {producto.cantidad}</p>
                                         </div>
                                         <div className="producto-botones">
-                                            <button onClick={() => incrementarCantidad(producto.id)}>+</button>
-                                            <button onClick={() => decrementarCantidad(producto.id)}>-</button>
-                                            <button onClick={() => eliminarProducto(producto.id)}>Eliminar</button>
+                                            <button className="boton-cantidadcarrito" onClick={() => incrementarCantidad(producto.id)}>+</button>
+                                            <button className="boton-cantidadcarrito" onClick={() => decrementarCantidad(producto.id)}>-</button>
+                                            <button className="boton-eliminarcarrito" onClick={() => eliminarProducto(producto.id)}>Eliminar</button>
                                         </div>
                                     </div>
                                 );
@@ -69,7 +68,7 @@ const CartWidget = ({ cantidad, cart, setCart }) => {
                             <p>No hay productos en el carrito.</p>
                         )}
                     </div>
-                    <button onClick={() => setCart([])}>Vaciar Carrito</button>
+                    <button className="boton-vaciarcarrito" onClick={() => setCart([])}>Vaciar Carrito</button>
                 </div>
             )}
         </div>

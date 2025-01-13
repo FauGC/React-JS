@@ -1,4 +1,4 @@
-/* Estilos para las tarjetas de los productos */
+
 .item {
     width: 200px;
     padding: 10px;
@@ -40,19 +40,6 @@
         margin: 10px 0;
     }
 
-    button {
-        padding: 10px;
-        background-color: #28a745;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        margin-top: 10px;
-
-        &:hover {
-            background-color: #218838;
-        }
-    }
 }
 
 .item-list {
@@ -135,33 +122,6 @@
     }
 }
 
-.categories {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    padding: 20px;
-    background: linear-gradient(to bottom, #fffbd8, #ffffff);
-    margin: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    text-align: center;
-    flex-wrap: wrap;
-
-    button {
-        padding: 10px 20px;
-        background-color: #0066cc;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        margin: 5px; /* Espaciado entre botones */
-
-        &:hover {
-            background-color: #004f99;
-        }
-    }
-}
-
 .item-list-container {
     width: 75%;
     display: flex;
@@ -213,3 +173,37 @@
     font-weight: bold;
     color: #333;
 }
+
+.categoria-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: gray;
+    border-radius: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+    margin-right: 10px;
+
+
+    &:hover {
+        background-color: #0056b3;
+    }
+}
+
+.agregar-carrito{
+    padding: 10px 20px;
+    background-color: #03c22d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #018e20;
+    }
+}
+

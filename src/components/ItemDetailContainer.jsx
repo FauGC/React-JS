@@ -32,7 +32,7 @@ const ItemDetailContainer = ({ item }) => {
     return (
         <>
             <div className="tarjeta">
-                <h3>{item.nombre}</h3>
+                <h2>{item.nombre}</h2>
                 <img
                     src={`./imagenes/${item.imagenes[0]}`}
                     alt={item.nombre}

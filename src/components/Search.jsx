@@ -50,7 +50,7 @@ const Busqueda = ({ items, onAddToCart }) => {
 
             {searchResults.length > 0 ? (
                 <div className="catalogo-tarjeta">
-                    <h2>Resultados de Búsqueda</h2>
+                    <h3>Resultados de Búsqueda</h3>
                     <div className="item-list">
                         {searchResults.map((item) => (
                             <div key={item.id} className="item tarjeta">
@@ -60,7 +60,7 @@ const Busqueda = ({ items, onAddToCart }) => {
                                 <p>Subcategoría: {highlightText(item.subcategoria || "N/A", searchQuery)}</p>
                                 <p>Precio: ${highlightText(item.precio?.toString() || "0", searchQuery)}</p>
                                 <p>Pasajeros: {highlightText(item.pasajeros?.toString() || "N/A", searchQuery)}</p>
-                                <button onClick={() => onAddToCart(item)}>Agregar al carrito</button>
+                                <button className="agregar-carrito" onClick={() => onAddToCart(item)}>Agregar al carrito</button>
                             </div>
                         ))}
                     </div>
