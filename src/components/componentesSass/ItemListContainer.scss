@@ -1,0 +1,193 @@
+
+.item {
+    width: 200px;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+
+    .imagen-producto {
+        width: 100%;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    h3 {
+        font-size: 1rem;
+        margin: 10px 0;
+        color: #333;
+    }
+
+    p {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .precio {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #007bff;
+        margin: 10px 0;
+    }
+
+}
+
+.item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 50%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .modal-content {
+        position: relative;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .boton-cerrar {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #f00;
+            color: white;
+            border-radius: 5px;
+            padding: 5px 10px; /* Ajusta solo alrededor del texto */
+            width: auto; /* Dinámico basado en el texto */
+
+            &:hover {
+                background-color: rgb(124, 2, 2);
+            }
+        }
+
+        .modal-botones {
+            display: flex;
+            gap: 10px; /* Espaciado entre botones */
+            margin: 10px;
+            justify-content: center;
+
+            button {
+                font-size: 1rem;
+                background-color: rgb(31, 193, 2);
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;
+                padding: 10px 20px;
+                width: 150px; /* Tamaño uniforme */
+                height: 50px; /* Consistencia en altura */
+
+                &:hover {
+                    background-color: rgb(22, 143, 1);
+                }
+            }
+        }
+    }
+}
+
+.item-list-container {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin: 20px auto;
+}
+
+.modal-body {
+    display: flex;
+    align-items: center;
+}
+
+.imagen-modal {
+    max-width: 50%;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.modal-detalles {
+    max-width: 50%;
+}
+
+.detalle-tarjeta {
+    width: 100%;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 15px;
+    max-width: 400px;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card li {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.card strong {
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+.agregar-carrito{
+    padding: 10px 20px;
+    background-color: #03c22d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #018e20;
+    }
+}
+
