@@ -56,7 +56,7 @@ const NavBar = () => {
         <div className="nav-container">
             <div className="header">
                 <div className="header-index">
-                    <img src="/imagenes/logo.png" alt="Logo" />
+                    <img src="https://ibb.co/BV5s5whG" alt="Logo" />
                 </div>
                 <div className="eslogan">
                     <h1>Somos una empresa apasionada por crear los mejores recuerdos de cada aventura.</h1>
