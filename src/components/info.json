@@ -1,11 +1,11 @@
 [
     {
-        "id": 1,
+        id: 1,
         
-        "imagenes": [
+        imagenes: [
             https://github.com/FauGC/React-JS/blob/main/imagenes/habiacionesPENTHOUSE1.jpg,
             habiacionesSTANDARDLATERAL2.jpg,
-            "habiacionesSTANDARDLATERAL3.jpg",
+            habiacionesSTANDARDLATERAL3.jpg,
             "habiacionesSTANDARDLATERAL4.jpg"            
         ]
     },
