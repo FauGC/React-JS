@@ -17,6 +17,7 @@ const ItemListContainer = ({ category, onAddToCart }) => {
                     const data = await getAsyncData();
                     const filteredItems = data.filter(item => item.categoria === category);
                     const storedStock = JSON.parse(localStorage.getItem('stock')) || {};
+                    
                     const itemsWithImages = filteredItems.map(item => {
                         const productImages = productosimg.find(img => img.id === parseInt(item.id));
                         if (storedStock[item.id] === undefined) {
@@ -24,9 +25,13 @@ const ItemListContainer = ({ category, onAddToCart }) => {
                         }
                         return {
                             ...item,
-                            imagenes: productImages ? productImages.imagenes : []
+                            // Se elimina el prefijo "./imagenes/" de cada ruta de imagen
+                            imagenes: productImages 
+                                ? productImages.imagenes.map(image => image.replace('./imagenes/', '')) 
+                                : []
                         };
                     });
+                    
                     localStorage.setItem('stock', JSON.stringify(storedStock));
                     setStockLevels(storedStock);
                     setItems(itemsWithImages);
@@ -161,3 +166,4 @@ const ItemListContainer = ({ category, onAddToCart }) => {
 };
 
 export default ItemListContainer;
+
