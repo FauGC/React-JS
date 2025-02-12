@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { createBuyOrder } from './database';
+import { createBuyOrder } from './database'; // Se importa createBuyOrder desde database.js
 
 const CartWidget = ({ cantidad, cart, setCart }) => {
     const [isCarritoVisible, setIsCarritoVisible] = useState(false);
@@ -11,7 +11,7 @@ const CartWidget = ({ cantidad, cart, setCart }) => {
         email: "",
         phone: ""
     });
-    const [purchaseCompleted, setPurchaseCompleted] = useState(false); 
+    const [purchaseCompleted, setPurchaseCompleted] = useState(false); // Estado para saber si la compra fue realizada
 
     useEffect(() => {
         const savedCart = localStorage.getItem('cartItems');
@@ -101,7 +101,7 @@ const CartWidget = ({ cantidad, cart, setCart }) => {
         createBuyOrder(orderData)
             .then(newOrderId => {
                 console.log('Compra realizada con éxito, orden ID:', newOrderId, orderData);
-                setOrderId(newOrderId); 
+                setOrderId(newOrderId); // Guardar el ID de la orden
             })
             .catch(error => {
                 console.error("Error al crear la orden:", error);
@@ -112,9 +112,9 @@ const CartWidget = ({ cantidad, cart, setCart }) => {
         onSubmit();
         vaciarCarrito();
         localStorage.clear();
-        setUserData({ username: "", surname: "", age: "", email: "", phone: "" }); 
+        setUserData({ username: "", surname: "", age: "", email: "", phone: "" }); // Limpiar datos del formulario
         setPurchaseCompleted(true); 
-        setIsCarritoVisible(false); 
+        setIsCarritoVisible(false); // Cerrar el carrito después de realizar la compra
     };
 
     const isFormComplete = userData.username && userData.surname && userData.age && userData.email && userData.phone;
@@ -131,8 +131,9 @@ const CartWidget = ({ cantidad, cart, setCart }) => {
                     <div className="carrito-body">
                         {cart.length > 0 ? (
                             cart.map(producto => {
+                                // Se elimina la concatenación de "./imagenes/"
                                 const imageUrl = producto.imagenes && producto.imagenes[0]
-                                    ? `${producto.imagenes[0]}`
+                                    ? producto.imagenes[0]
                                     : 'default.jpg';
                                 return (
                                     <div key={producto.id} className="producto-en-carrito">
