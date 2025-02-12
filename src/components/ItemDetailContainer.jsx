@@ -33,15 +33,15 @@ const ItemDetailContainer = ({ item }) => {
         }
     };
 
-    // Asegurarnos de que 'item.imagenes' existe y tiene al menos un elemento
+    // Verificamos que 'item.imagenes' exista y tenga al menos una imagen
     const hasImages = item.imagenes && item.imagenes.length > 0;
-    const imageSrc = hasImages ? `./imagenes/${item.imagenes[currentImageIndex]}` : null;
+    // Se utiliza la URL de la imagen tal cual, sin concatenar "./imagenes/"
+    const imageSrc = hasImages ? item.imagenes[currentImageIndex] : null;
 
     return (
         <>
             <div className="tarjeta">
                 <h2>{item.nombre}</h2>
-                {/* Validamos si hay imágenes antes de mostrar la primera imagen */}
                 {hasImages ? (
                     <img
                         src={imageSrc}
@@ -50,7 +50,7 @@ const ItemDetailContainer = ({ item }) => {
                         onClick={openModal}
                     />
                 ) : (
-                    <p>No hay imágenes disponibles</p> // Mensaje si no hay imágenes
+                    <p>No hay imágenes disponibles</p>
                 )}
             </div>
 
@@ -93,3 +93,4 @@ const ItemDetailContainer = ({ item }) => {
 };
 
 export default ItemDetailContainer;
+
