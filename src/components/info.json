@@ -3,69 +3,69 @@
         "id": 1,
         
         "imagenes": [
-            "habiacionesSTANDARDLATERAL1.jpg",
-            "habiacionesSTANDARDLATERAL2.jpg",
-            "habiacionesSTANDARDLATERAL3.jpg",
-            "habiacionesSTANDARDLATERAL4.jpg"            
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesSTANDARDLATERAL1.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesSTANDARDLATERAL2.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesSTANDARDLATERAL3.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesSTANDARDLATERAL4.jpg"            
         ]
     },
     {
         "id": 2,
         
         "imagenes": [
-            "habitacionSTANDARDFRENTECALLE1.jpg",
-            "habitacionSTANDARDFRENTECALLE2.jpg",
-            "habitacionSTANDARDFRENTECALLE3.jpg",
-            "habitacionSTANDARDFRENTECALLE4.jpg",
-            "habitacionSTANDARDFRENTECALLE5.jpg",
-            "habitacionSTANDARDFRENTECALLE6.jpg"            
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSTANDARDFRENTECALLE1.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSTANDARDFRENTECALLE2.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSTANDARDFRENTECALLE3.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSTANDARDFRENTECALLE4.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSTANDARDFRENTECALLE5.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSTANDARDFRENTECALLE6.jpg"            
         ]
     },
     {
         "id": 3,
         
         "imagenes": [
-            "habitacionSTANDARDFRENTEMAR1.jpg",
-            "habitacionSTANDARDFRENTEMAR2.jpg",
-            "habitacionSTANDARDFRENTEMAR3.jpg",
-            "habitacionSTANDARDFRENTEMAR4.jpg",
-            "habitacionSTANDARDFRENTEMAR5.jpg",
-            "habitacionSTANDARDFRENTEMAR6.jpg",
-            "habitacionSTANDARDFRENTEMAR7.jpg"            
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSTANDARDFRENTEMAR1.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSTANDARDFRENTEMAR2.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSTANDARDFRENTEMAR3.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSTANDARDFRENTEMAR4.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSTANDARDFRENTEMAR5.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSTANDARDFRENTEMAR6.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSTANDARDFRENTEMAR7.jpg"            
         ]
     },
     {
         "id": 4,
         
         "imagenes": [
-            "habitacionSUPERIORFRENTECALLE1.jpg",
-            "habitacionSUPERIORFRENTECALLE2.jpg",
-            "habitacionSUPERIORFRENTECALLE3.jpg",
-            "habitacionSUPERIORFRENTECALLE4.jpg",
-            "habitacionSUPERIORFRENTECALLE5.jpg",
-            "habitacionSUPERIORFRENTECALLE6.jpg",
-            "habitacionSUPERIORFRENTECALLE7.jpg"            
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSUPERIORFRENTECALLE1.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSUPERIORFRENTECALLE2.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSUPERIORFRENTECALLE3.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSUPERIORFRENTECALLE4.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSUPERIORFRENTECALLE5.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSUPERIORFRENTECALLE6.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habitacionSUPERIORFRENTECALLE7.jpg"            
         ]
     },
     {
         "id": 5,        
         "imagenes": [
-            "habiacionesPENTHOUSE1.jpg",
-            "habiacionesPENTHOUSE2.jpg",
-            "habiacionesPENTHOUSE3.jpg",
-            "habiacionesPENTHOUSE4.jpg",
-            "habiacionesPENTHOUSE5.jpg",
-            "habiacionesPENTHOUSE6.jpg",
-            "habiacionesPENTHOUSE7.jpg",
-            "habiacionesPENTHOUSE8.jpg",
-            "habiacionesPENTHOUSE9.jpg",
-            "habiacionesPENTHOUSE10.jpg",
-            "habiacionesPENTHOUSE11.jpg",
-            "habiacionesPENTHOUSE12.jpg",
-            "habiacionesPENTHOUSE13.jpg",
-            "habiacionesPENTHOUSE14.jpg",
-            "habiacionesPENTHOUSE15.jpg",
-            "habiacionesPENTHOUSE16.jpg"            
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE1.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE2.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE3.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE4.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE5.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE6.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE7.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE8.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE9.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE10.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE11.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE12.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE13.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE14.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE15.jpg",
+            "https://raw.githubusercontent.com/FauGC/React-JS/main/imagenes/habiacionesPENTHOUSE16.jpg"            
         ]
     }
 ]
