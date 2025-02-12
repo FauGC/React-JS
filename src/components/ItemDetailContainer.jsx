@@ -35,7 +35,7 @@ const ItemDetailContainer = ({ item }) => {
 
     // Asegurarnos de que 'item.imagenes' existe y tiene al menos un elemento
     const hasImages = item.imagenes && item.imagenes.length > 0;
-    const imageSrc = hasImages ? `${item.imagenes[currentImageIndex]}` : null;
+    const imageSrc = hasImages ? `./imagenes/${item.imagenes[currentImageIndex]}` : null;
 
     return (
         <>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import productosimg from './info.json';
+import productosimg from './info';
 import ItemDetailContainer from './ItemDetailContainer';
 
 const Busqueda = ({ items, onAddToCart }) => {

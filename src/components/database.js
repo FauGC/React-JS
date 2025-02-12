@@ -1,7 +1,7 @@
 // Importa las funciones necesarias de Firebase
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, doc, updateDoc, addDoc } from "firebase/firestore";  // Elimina la segunda importación de 'collection'
-import productosimg from './info.json';  // Asegúrate de que este path sea correcto
+import productosimg from './info';  // Asegúrate de que este path sea correcto
 
 // Configuración de Firebase
 const firebaseConfig = {
