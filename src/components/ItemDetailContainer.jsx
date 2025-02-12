@@ -33,9 +33,7 @@ const ItemDetailContainer = ({ item }) => {
         }
     };
 
-    // Verificamos que 'item.imagenes' exista y tenga al menos una imagen
     const hasImages = item.imagenes && item.imagenes.length > 0;
-    // Se utiliza la URL de la imagen tal cual, sin concatenar "./imagenes/"
     const imageSrc = hasImages ? item.imagenes[currentImageIndex] : null;
 
     return (
