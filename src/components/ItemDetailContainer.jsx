@@ -93,4 +93,3 @@ const ItemDetailContainer = ({ item }) => {
 };
 
 export default ItemDetailContainer;
-
