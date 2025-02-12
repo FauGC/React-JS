@@ -122,7 +122,6 @@ const CartWidget = ({ cantidad, cart, setCart }) => {
     const realizarCompra = async () => {
         onSubmit();
         await vaciarCarrito();
-        localStorage.clear();
         setUserData({ username: "", surname: "", age: "", email: "", phone: "" });
         setPurchaseCompleted(true);
         setIsCarritoVisible(false);
