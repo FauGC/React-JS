@@ -20,6 +20,12 @@ const CartWidget = ({ cantidad, cart, setCart }) => {
         if (savedCart) {
             setCart(JSON.parse(savedCart));
         }
+
+        const timer = setTimeout(() => {
+            localStorage.clear();
+        }, 5000);
+
+        return () => clearTimeout(timer);
     }, [setCart]);
 
     useEffect(() => {
