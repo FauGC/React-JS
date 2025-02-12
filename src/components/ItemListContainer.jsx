@@ -70,7 +70,6 @@ const ItemListContainer = ({ category, onAddToCart }) => {
     const handleAddToCart = (item, quantity) => {
         const currentStock = stockLevels[item.id];
         if (currentStock > 0 && quantity > 0 && quantity <= currentStock) {
-            // Agregar al carrito tantas veces como la cantidad seleccionada
             for (let i = 0; i < quantity; i++) {
                 onAddToCart(item);
             }
@@ -81,7 +80,6 @@ const ItemListContainer = ({ category, onAddToCart }) => {
             localStorage.setItem('stock', JSON.stringify(updatedStockLevels));
             window.dispatchEvent(new Event('stockUpdated'));
 
-            // Restablecer la cantidad seleccionada a 1 después de agregar al carrito
             setSelectedQuantities(prev => ({ ...prev, [item.id]: 1 }));
         }
     };
@@ -106,7 +104,7 @@ const ItemListContainer = ({ category, onAddToCart }) => {
                 items.map(item => {
                     const availableStock = stockLevels[item.id] !== undefined ? stockLevels[item.id] : item.stock;
                     const isDisabled = availableStock <= 0;
-                    const quantity = selectedQuantities[item.id] || 1; // Obtener cantidad seleccionada
+                    const quantity = selectedQuantities[item.id] || 1;
 
                     return (
                         <div key={item.id} className="item tarjeta">
@@ -115,7 +113,6 @@ const ItemListContainer = ({ category, onAddToCart }) => {
                             <p><strong>Pasajeros:</strong> {item.pasajeros}</p>
                             <p>Stock: {availableStock}</p>
                             
-                            {/* Botones para modificar la cantidad */}
                             <div className="quantity-controls">
                                 <button
                                     onClick={() => handleQuantityChange(item.id, -1)}
