@@ -57,11 +57,11 @@ const Busqueda = ({ items, onAddToCart }) => {
         setSearchResults(itemsWithImagesAndStock);
     };
 
-    const handleQuantityChange = (itemId, value) => {
-        const availableStock = stockLevels[itemId] !== undefined ? stockLevels[item.id] : 0;
-        const newQuantity = Math.min(Math.max(1, value), availableStock);
-        setQuantities(prev => ({ ...prev, [itemId]: newQuantity }));
-    };
+   const handleQuantityChange = (itemId, value) => {
+    const availableStock = stockLevels[itemId] !== undefined ? stockLevels[itemId] : 0;
+    const newQuantity = Math.min(Math.max(1, value), availableStock);
+    setQuantities(prev => ({ ...prev, [itemId]: newQuantity }));
+};
 
     const handleAddToCart = (item) => {
         const quantity = quantities[item.id] || 1;
