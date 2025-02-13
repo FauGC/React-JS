@@ -132,6 +132,7 @@ const CartWidget = ({ cantidad, cart, setCart }) => {
         await onSubmit();
         await actualizarStockEnFirebase();  // Reducir el stock en Firebase
         vaciarCarrito();
+        localStorage.clear();  // Borrar todo el localStorage
         setUserData({ username: "", surname: "", age: "", email: "", phone: "" }); // Limpiar datos del formulario
         setPurchaseCompleted(true); 
         setIsCarritoVisible(false); // Cerrar el carrito después de realizar la compra
@@ -238,7 +239,6 @@ const CartWidget = ({ cantidad, cart, setCart }) => {
                 </form>
             )}
 
-            {/* Botón Realizar Compra */}
             {cart.length > 0 && (
                 <div className="realizar-compra-container">
                     <button 
@@ -260,7 +260,9 @@ const CartWidget = ({ cantidad, cart, setCart }) => {
             {/* Mostrar ID de la orden después de la compra */}
             {purchaseCompleted && orderId && (
                 <div className="order-id-message" style={{ marginTop: '20px', padding: '10px', backgroundColor: '#f1f1f1', textAlign: 'center' }}>
-                    <p><strong>Tu número de ID es: {orderId}</strong></p>
+                    <p><strong>¡Compra exitosa! Tu número de ID es: {orderId}</strong></p>
+                    <p><strong>¡¡¡Importante!!! Recordá este ID que es tu comprobante y numero de gestión. Lo vas a necesitar mas adelante. Muchas gracias.</strong></p>
+                    
                 </div>
             )}
         </div>
@@ -268,3 +270,4 @@ const CartWidget = ({ cantidad, cart, setCart }) => {
 };
 
 export default CartWidget;
+
